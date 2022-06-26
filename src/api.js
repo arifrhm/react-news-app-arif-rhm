@@ -10,7 +10,8 @@ export const getBitcoinArticles = async () => {
 
 export const getArticles = async topic => {
   const response = await fetch(
-    `https://newsapi.org/v2/everything?q=${topic}&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`
+    `https://newsapi.org/v2/everything?q=${topic}&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`,
+    { mode: 'cors' }
   );
   const json = await response.json();
   return json;
